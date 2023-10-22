@@ -6,24 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> GitHub User Search</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+  <div class="container">
 
-  devfinder
+    <header class="header">
+      <h1 class="site-title">devfinder</h1>
+      <div class="color-toggle">
+        Light
+        Dark
+      </div>
+    </header>
 
-  Light
-  Dark
+    <main class="main">
+      <form action="#" class="search-bar" novalidate>
+        <label for="search-input" class="screen-reader" aria-label="Search Github username"></label>
+        <input type="search" id="search-input" class="search-input" placeholder="Search GitHub username..."></input>
+        <button class="search-btn">Search</button>
+      </form>
 
-  Search GitHub username...
-  Search
+      <article class="profile-card">
+        <div class="profile-img-wrap">
+          <img src="#" alt="User profile picture" class="profile-img">
+        </div>
 
-  Joined
+        <section class="user-info">
+          <h3 class="user-info__name">{Name}</h3>
+          <h4 class="user-info__username">{username}</h4>
+          <p class="user-info__join-date">Joined {Date}</p>
+        </section>
 
-  Repos
-  Followers
-  Following
+        <section class="user-bio">{Lorem impsum bio here}
+        </section>
 
+        <section class="user-data">
+          <div class="user-data__repos">
+            <p>Repos</p>
+            <h3>{Number}</h3>
+          </div>
+          <div class="user-data__followers">
+            Followers
+            <h3>{Number}</h3>
+          </div>
+          <div class="user-data__following">
+            Following
+            <h3>{Number}</h3>
+          </div>
+        </section>
+
+        <section class="user-details">
+          <div class="user-details__location">{Location}</div>
+          <div class="user-details__website">{Website}</div>
+          <div class="user-details__twitter">{Twitter}</div>
+          <div class="user-details__org">{Organization}</div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p> Brianna Renni | <a href="https://github.com/briannarenni/">Github</a></p>
+    </footer>
+  </div>
 </body>
 
 </html>
