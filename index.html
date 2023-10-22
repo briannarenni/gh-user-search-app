@@ -29,31 +29,34 @@
       </form>
 
       <article class="profile-card">
-        <div class="profile-img-wrap">
-          <img src="#" alt="User profile picture" class="profile-img">
-        </div>
+        <!-- User info -->
+        <div class="user-info-wrap">
+          <div class="profile-img-wrap">
+            <img src="assets/standin-pic.svg" class="profile-img" width="70px" alt="User profile picture">
+          </div>
 
-        <section class="user-info">
-          <h3 class="user-info__name">{Name}</h3>
-          <h4 class="user-info__username">{username}</h4>
-          <p class="user-info__join-date">Joined {Date}</p>
-        </section>
+          <section class="user-info">
+            <h3 class="user-info__name">{Name}</h3>
+            <h4 class="user-info__username">{username}</h4>
+            <h4 class="user-info__join-date">Joined {Date}<h4>
+          </section>
+        </div>
 
         <section class="user-bio">{Lorem impsum bio here}
         </section>
 
         <section class="user-data">
-          <div class="user-data__repos">
-            <p>Repos</p>
-            <h3>{Number}</h3>
+          <div class="user-data__section repos">
+            <p class="user-data__title">Repos</p>
+            <h3 class="user-data__desc">{8}</h3>
           </div>
-          <div class="user-data__followers">
-            Followers
-            <h3>{Number}</h3>
+          <div class="user-data__section followers">
+            <p class="user-data__title">Followers</p>
+            <h3 class="user-data__desc">{3923}</h3>
           </div>
-          <div class="user-data__following">
-            Following
-            <h3>{Number}</h3>
+          <div class="user-data__section following">
+            <p class="user-data__title">Following</p>
+            <h3 class="user-data__desc">{20}</h3>
           </div>
         </section>
 
