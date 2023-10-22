@@ -2,6 +2,7 @@
 
 :root {
   --error-red: rgb(255, 0, 0);
+  --attr-color: rgb(48, 138, 241);
   /* Light mode */
   --primary-blue: #0079FF;
   --light-gray: #697C9A;
@@ -39,4 +40,70 @@ h3 {
 h4 {
   font-size: 13px;
   line-height: 20px;
+}
+
+/* ! REMOVE BORDERS */
+.header,
+.search-bar,
+.profile-card,
+.footer {
+  border: 1px solid fuchsia;
+}
+
+/* Containers */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  padding: 2em 1em;
+}
+
+.header {}
+
+.main {}
+
+.color-toggle {
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+/* Search bar */
+.search-bar {}
+
+.search-input {}
+
+.search-btn {}
+
+/* Profile */
+.profile-card {}
+
+.user-info {}
+
+.user-info__username {
+  font-weight: 400;
+}
+
+.user-bio {}
+
+.user-data {}
+
+.user-details {}
+
+/* Footer */
+.footer {
+  align-self: center;
+  position: absolute;
+  bottom: 1em;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer a {
+  color: var(--attr-color);
+}
+
+.footer a:hover {
+  color: var(--attr-color);
+  font-weight: bold;
 }
