@@ -52,16 +52,31 @@ h4 {
 }
 
 /* Containers */
-.container {
+.page-wrap {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2em;
   padding: 2em 1em;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header,
+.search,
+.main {
+  width: 90%;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .main {}
@@ -72,35 +87,75 @@ h4 {
   text-transform: uppercase;
 }
 
-/* Search bar */
-.search-bar {}
-
-.search-input {
-  font-size: 13px;
-  font-family: 'Space Mono', monospace;
-  width: 75%;
+.color-toggle figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
 }
 
-.search-btn {}
+.color-toggle figcaption,
+.color-toggle img {
+  display: inline-block;
+}
+
+/* Search bar */
+.search {
+  display: flex;
+  width: 100%;
+  /* position: relative; */
+}
+
+.search-bar {
+  flex-grow: 1;
+  width: 100%;
+  font-size: 13px;
+  font-family: 'Space Mono', monospace;
+
+}
+
+.search-btn {
+  /* position: absolute; */
+  /* right: 1em; */
+}
 
 /* Profile */
+.desk-container {
+  grid-template-columns: 1fr;
+  margin-top: 2em;
+}
+
 .profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
   margin-top: 1em;
-  padding: 2em .5em;
 }
 
 .user-info-wrap {
   display: flex;
-  gap: 1.5em;
+  align-items: center;
+  gap: 2em;
 }
 
+.profile-img-wrap-desktop {
+  display: none;
+}
+
+.profile-img {
+  width: 90px;
+}
+
+
 .user-info {
-  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .user-bio {
   margin: 1em 0;
-  min-height: 100px;
+  min-height: 75px;
 }
 
 .user-data {
@@ -115,16 +170,29 @@ h4 {
 }
 
 .user-details {
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  gap: 1em;
   margin: 1.5em 0;
+  padding: 5px;
 }
 
+.user-details ul {
+  margin: 0;
+  padding: 0;
+}
 
+.details figure {
+  display: inline-flex;
+  gap: 1em;
+  align-items: center;
+  margin: 5px 0;
+}
 
 /* Footer */
 .footer {
-  align-self: center;
-  /* position: absolute; */
-  /* bottom: 1em; */
+  margin-top: 1em;
   text-align: center;
   font-size: 13px;
 }

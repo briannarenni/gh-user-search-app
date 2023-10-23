@@ -8,70 +8,106 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/queries.css">
 </head>
 
 <body>
-  <div class="container">
 
-    <header class="header">
-      <h1 class="site-title">devfinder</h1>
-      <div class="color-toggle">
-        Light
-        Dark
-      </div>
-    </header>
+  <div class="page-wrap">
+    <div class="container">
 
-    <main class="main">
-      <form action="#" class="search-bar" novalidate>
-        <label for="search-input" class="screen-reader" aria-label="Search Github username"></label>
-        <input type="search" id="search-input" class="search-input" placeholder="Search GitHub username..."></input>
-        <button class="search-btn">Search</button>
-      </form>
-
-      <article class="profile-card">
-        <!-- User info -->
-        <div class="user-info-wrap">
-          <div class="profile-img-wrap">
-            <img src="assets/standin-pic.svg" class="profile-img" width="70px" alt="User profile picture">
-          </div>
-
-          <section class="user-info">
-            <h3 class="user-info__name">{Name}</h3>
-            <h4 class="user-info__username">{username}</h4>
-            <h4 class="user-info__join-date">Joined {Date}<h4>
-          </section>
+      <header class="header">
+        <h1 class="site-title">devfinder</h1>
+        <div class="color-toggle">
+          <figure>
+            <figcaption>Light</figcaption>
+            <img src="assets/icon-moon.svg" alt="Dark mode toggle">
+          </figure>
         </div>
+      </header>
 
-        <section class="user-bio">{Lorem impsum bio here}
-        </section>
+      <main class="main">
+        <!-- TODO: Move button position/style input -->
+        <form action="#" class="search" novalidate>
+          <label for="search-bar" class="screen-reader" aria-label="Search Github username"></label>
+          <input type="search" id="search-bar" class="search-bar" placeholder="Search GitHub username..."></input>
+          <button class="search-btn">Search</button>
+        </form>
 
-        <section class="user-data">
-          <div class="user-data__section repos">
-            <p class="user-data__title">Repos</p>
-            <h3 class="user-data__desc">{8}</h3>
+        <div class="desk-container">
+          <!-- Hidden on small screens -->
+          <div class="profile-img-wrap-desktop">
+            <img src="assets/standin-pic.svg" class="profile-img" alt="User profile picture">
           </div>
-          <div class="user-data__section followers">
-            <p class="user-data__title">Followers</p>
-            <h3 class="user-data__desc">{3923}</h3>
-          </div>
-          <div class="user-data__section following">
-            <p class="user-data__title">Following</p>
-            <h3 class="user-data__desc">{20}</h3>
-          </div>
-        </section>
 
-        <section class="user-details">
-          <div class="user-details__location">{Location}</div>
-          <div class="user-details__website">{Website}</div>
-          <div class="user-details__twitter">{Twitter}</div>
-          <div class="user-details__org">{Organization}</div>
-        </section>
-      </article>
-    </main>
+          <article class="profile-card">
+            <section class="user-info-wrap">
+              <!-- Hidden on large screens -->
+              <div class="profile-img-wrap">
+                <img src="assets/standin-pic.svg" class="profile-img" alt="User profile picture">
+              </div>
 
-    <footer class="footer">
-      <p> Brianna Renni | <a href="https://github.com/briannarenni/">Github</a></p>
-    </footer>
+              <section class="user-info">
+                <h3 class="user-info__name">{Name}</h3>
+                <h4 class="user-info__username">{username}</h4>
+                <h4 class="user-info__joined"> {Date}<h4>
+              </section>
+            </section>
+
+            <section class="user-bio">{Lorem impsum bio here}</section>
+
+            <section class="user-data">
+              <div class="user-data__section repos">
+                <p class="user-data__title">Repos</p>
+                <h3 class="user-data__desc">{8}</h3>
+              </div>
+              <div class="user-data__section followers">
+                <p class="user-data__title">Followers</p>
+                <h3 class="user-data__desc">{3923}</h3>
+              </div>
+              <div class="user-data__section following">
+                <p class="user-data__title">Following</p>
+                <h3 class="user-data__desc">{20}</h3>
+              </div>
+            </section>
+
+            <section class="user-details">
+              <ul>
+                <li class="details user-details__location">
+                  <figure>
+                    <img src="assets/icon-location.svg" width="17px" height="25px" alt="Location icon">
+                    <figcaption>{Location}</figcaption>
+                  </figure>
+                </li>
+                <li class="details user-details__website">
+                  <figure>
+                    <img src="assets/icon-website.svg" width="20px" height="20px" alt="Website icon">
+                    <figcaption>{Website}</figcaption>
+                  </figure>
+                </li>
+                <li class="details user-details__twitter">
+                  <figure>
+                    <img src="assets/icon-twitter.svg" width="20px" height="16px" alt="Twitter icon">
+                    <figcaption>{Twitter}</figcaption>
+                  </figure>
+                </li>
+                <li class="details user-details__company">
+                  <figure>
+                    <img src="assets/icon-company.svg" width="20px" height="20px" alt="Company icon">
+                    <figcaption>{Company}</fi>
+                  </figure>
+                </li>
+              </ul>
+            </section>
+
+          </article>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p> Brianna Renni | <a href="https://github.com/briannarenni/">Github</a></p>
+      </footer>
+    </div>
   </div>
 </body>
 
