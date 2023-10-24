@@ -36,6 +36,36 @@
     grid-row: 2 / 3;
   }
 
+  .search-bar {
+    font-size: 18px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+  }
+
+  .user-info__username,
+  .user-info__joined {
+    font-size: 16px;
+  }
+
+  .user-bio {
+    font-size: 15px;
+  }
+
+  .user-data__title {
+    font-size: 13px;
+  }
+
+  .user-data__desc {
+    font-size: 18px;
+  }
+
+  .details figure {
+    gap: .5em;
+    font-size: 13px;
+  }
+
 }
 
 @media screen and (min-width: 950px) {
@@ -52,12 +82,12 @@
   }
 
   .container {
-    width: 62%;
+    width: 70%;
   }
 
   .desk-container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
   }
 
   .search {
@@ -69,7 +99,7 @@
   }
 
   .profile-card {
-    margin: 0;
+    margin-inline-start: 1em;
   }
 
   .profile-img-wrap {
@@ -82,8 +112,9 @@
 
   .user-info {
     display: grid;
-    grid-template: auto auto / 3fr 1fr;
+    grid-template: auto auto / .5fr 1fr;
     align-items: center;
+    column-gap: 5em;
   }
 
   .user-info__name {
@@ -97,21 +128,32 @@
   }
 
   .user-info__joined {
+    font-size: 15px;
     order: 2;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+
   }
 
 }
 
 @media screen and (min-width: 1200px) {
   .container {
+    width: 60%;
     display: flex;
     flex-direction: column;
-    width: 60%;
     justify-content: center;
     align-items: center;
     gap: 1em;
   }
 
+  .profile-img {
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .profile-img {
+    width: 150px;
+  }
 }

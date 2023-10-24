@@ -17,6 +17,7 @@
 }
 
 body {
+  color: var(--stone-blue);
   font-size: 15px;
   font-family: 'Space Mono', monospace;
   line-height: 25px;
@@ -41,6 +42,14 @@ h4 {
   font-weight: 400;
   font-size: 13px;
   line-height: 20px;
+}
+
+.small-text {
+  font-size: 13px;
+}
+
+.bold-text {
+  color: black;
 }
 
 /* ! REMOVE BORDERS */
@@ -111,10 +120,10 @@ h4 {
   width: 100%;
   font-size: 13px;
   font-family: 'Space Mono', monospace;
-
 }
 
 .search-btn {
+  font-size: 14px;
   /* position: absolute; */
   /* right: 1em; */
 }
@@ -135,7 +144,7 @@ h4 {
 .user-info-wrap {
   display: flex;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
 }
 
 .profile-img-wrap-desktop {
@@ -143,14 +152,17 @@ h4 {
 }
 
 .profile-img {
-  width: 90px;
+  width: 75px;
 }
-
 
 .user-info {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.user-info__username {
+  color: var(--primary-blue);
 }
 
 .user-bio {
@@ -165,8 +177,15 @@ h4 {
 }
 
 .user-data__section {
-  border: 1px solid blue;
-  padding: 5px 10px;
+  padding: 10px;
+}
+
+.user-data__title {
+  font-size: 11px;
+}
+
+.user-data__desc {
+  font-size: 16px;
 }
 
 .user-details {
@@ -175,12 +194,15 @@ h4 {
   max-height: fit-content;
   gap: 1em;
   margin: 1.5em 0;
-  padding: 5px;
 }
 
 .user-details ul {
   margin: 0;
   padding: 0;
+}
+
+.details {
+  font-size: 13px;
 }
 
 .details figure {
