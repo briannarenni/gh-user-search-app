@@ -12,25 +12,24 @@
 </head>
 
 <body>
+  <div class="page-wrap flex-col">
+    <div class="container flex-col">
 
-  <div class="page-wrap">
-    <div class="container">
-
-      <header class="header">
+      <header class="header flex-row">
         <h1 class="site-title bold-text">devfinder</h1>
         <div class="color-toggle">
-          <figure>
+          <figure class="flex-row">
             <figcaption class="small-text">Dark</figcaption>
-            <img src="assets/icon-moon.svg" alt="Dark mode toggle">
+            <img src="assets/icon-moon.svg" alt="Toggle button for color scheme">
           </figure>
         </div>
       </header>
 
       <main class="main">
-        <form action="#" class="search" novalidate>
+        <form action="#" class="search flex-row" novalidate>
           <div class="search-wrapper">
             <span class="search-icon">
-              <img src="assets/icon-search.svg" alt="Search icon">
+              <img src="assets/icon-search.svg" alt="Magnifying glass search icon">
             </span>
             <input type="search" id="search-bar" class="search-bar" placeholder="Search GitHub username" aria-label="Search Github username">
             <button class="search-btn">Search</button>
@@ -43,17 +42,17 @@
             <img src="assets/standin-pic.svg" class="profile-img" alt="User profile picture">
           </div>
 
-          <article class="profile-card">
-            <section class="user-info-wrap">
+          <article class="profile-card flex-col">
+            <section class="user-info-wrap flex-row">
               <!-- Hidden on large screens -->
               <div class="profile-img-wrap">
                 <img src="assets/standin-pic.svg" class="profile-img" alt="User profile picture">
               </div>
 
-              <section class="user-info">
+              <section class="user-info flex-col">
                 <h3 class="user-info__name bold-text">{Octocat}</h3>
                 <h4 class="user-info__username small-text">{@octocat}</h4>
-                <h4 class="user-info__joined small-text">Joined {25 January 2011}<h4>
+                <h4 class="user-info__joined small-text">Joined {25 January 2011}</h4>
               </section>
             </section>
 
@@ -61,7 +60,7 @@
               et dolore
               magna aliqua.}</section>
 
-            <section class="user-data">
+            <section class="user-data flex-row">
               <div class="user-data__section repos">
                 <p class="user-data__title">Repos</p>
                 <h3 class="user-data__desc bold-text">{8}</h3>
@@ -76,12 +75,12 @@
               </div>
             </section>
 
-            <section class="user-details">
+            <section class="user-details flex-col small-text">
               <ul>
                 <li class="details">
                   <figure class="user-details__location">
                     <span>
-                      <img src="assets/icon-location.svg" alt="Location icon">
+                      <img src="assets/icon-location.svg" alt="Location pin icon">
                     </span>
                     <figcaption>{San Francisco}</figcaption>
                   </figure>
@@ -112,8 +111,8 @@
                 </li>
               </ul>
             </section>
-
           </article>
+
         </div>
       </main>
 
