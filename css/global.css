@@ -46,9 +46,8 @@ ul {
   flex-direction: column;
 }
 
-
 .small-text {
-  font-size: 13px;
+  font-size: clamp(13px, 13px + .1vw, 15px);
 }
 
 .bold-text {
