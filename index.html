@@ -27,11 +27,14 @@
       </header>
 
       <main class="main">
-        <!-- TODO: Move button position/style input -->
         <form action="#" class="search" novalidate>
-          <label for="search-bar" class="screen-reader" aria-label="Search Github username"></label>
-          <input type="search" id="search-bar" class="search-bar" placeholder="Search GitHub username..."></input>
-          <button class="search-btn">Search</button>
+          <div class="search-wrapper">
+            <span class="search-icon">
+              <img src="assets/icon-search.svg" alt="Search icon">
+            </span>
+            <input type="search" id="search-bar" class="search-bar" placeholder="Search GitHub username" aria-label="Search Github username">
+            <button class="search-btn">Search</button>
+          </div>
         </form>
 
         <div class="desk-container">
@@ -75,27 +78,35 @@
 
             <section class="user-details">
               <ul>
-                <li class="details user-details__location">
-                  <figure>
-                    <img src="assets/icon-location.svg" width="17px" height="25px" alt="Location icon">
+                <li class="details">
+                  <figure class="user-details__location">
+                    <span>
+                      <img src="assets/icon-location.svg" alt="Location icon">
+                    </span>
                     <figcaption>{San Francisco}</figcaption>
                   </figure>
                 </li>
-                <li class="details user-details__website">
-                  <figure>
-                    <img src="assets/icon-website.svg" width="20px" height="20px" alt="Website icon">
+                <li class="details">
+                  <figure class="user-details__website">
+                    <span>
+                      <img src="assets/icon-website.svg" alt="Website icon">
+                    </span>
                     <figcaption>{https://github.com/blog}</figcaption>
                   </figure>
                 </li>
-                <li class="details user-details__twitter">
-                  <figure>
-                    <img src="assets/icon-twitter.svg" width="20px" height="16px" alt="Twitter icon">
+                <li class="details ">
+                  <figure class="user-details__twitter">
+                    <span>
+                      <img src="assets/icon-twitter.svg" alt="Twitter icon">
+                    </span>
                     <figcaption>{Not Available}</figcaption>
                   </figure>
                 </li>
-                <li class="details user-details__company">
-                  <figure>
-                    <img src="assets/icon-company.svg" width="20px" height="20px" alt="Company icon">
+                <li class="details">
+                  <figure class="user-details__company">
+                    <span>
+                      <img src="assets/icon-company.svg" alt="Company icon">
+                    </span>
                     <figcaption>{@github}</figcaption>
                   </figure>
                 </li>
