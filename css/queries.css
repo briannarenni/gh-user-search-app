@@ -13,26 +13,8 @@
     width: 100px;
   }
 
-  .user-details ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-  }
-
-  .user-details__location {
-    grid-row: 1 / 2;
-  }
-
-  .user-details__website {
-    grid-row: 2 / 3;
-  }
-
-  .user-details__twitter {
-    grid-row: 1 / 2;
-  }
-
-  .user-details__company {
-    grid-row: 2 / 3;
+  .user-info__name {
+    font-size: 22px;
   }
 
   .search-bar {
@@ -65,6 +47,28 @@
     font-size: 13px;
   }
 
+  .user-details ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  .user-details__location {
+    grid-row: 1 / 2;
+  }
+
+  .user-details__website {
+    grid-row: 2 / 3;
+  }
+
+  .user-details__twitter {
+    grid-row: 1 / 2;
+  }
+
+  .user-details__company {
+    grid-row: 2 / 3;
+  }
+
 }
 
 @media screen and (min-width: 950px) {
@@ -72,7 +76,6 @@
     width: 65%;
   }
 }
-
 
 @media screen and (min-width: 1024px) {
   .page-wrap {
@@ -131,9 +134,8 @@
     order: 2;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-text-align: end;
+    text-align: end;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
