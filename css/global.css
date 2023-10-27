@@ -1,3 +1,4 @@
+/* Reset rules */
 *,
 *::before,
 *::after {
@@ -36,32 +37,4 @@ ul {
   list-style: none;
 }
 
-/* Utility */
-.flex-row {
-  display: flex;
-}
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.small-text {
-  font-size: clamp(13px, 13px + .1vw, 15px);
-}
-
-.bold-text {
-  color: black;
-}
-
-.screen-reader {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
