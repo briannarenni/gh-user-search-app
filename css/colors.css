@@ -1,3 +1,4 @@
+/* Color Palette */
 :root {
   --red: #ff0000;
   --gray-white: #F6F8FF;
@@ -5,23 +6,24 @@
   --stone-blue: #4B6A9B;
   --dark-gray: #2B3442;
   --primary-blue: #0079FF;
+
   --off-white: #FEFEFE;
-  /* Dark mode */
   --white: #FFFFFF;
   --off-black: #141D2F;
   --navy-blue: #1E2A47;
-  /*! attr color - might delete */
-  --pale-blue: #adc8f3;
+  --pale-blue: rgba(93, 153, 250, 0.834);
 }
 
 :root {
-  --error-text: var(--error-red);
   --main-bg: var(--gray-white);
   --container-bg: var(--off-white);
-  --primary-text: var(--light-gray);
-  --secondary-text: var(--stone-blue);
+  --primary-text: var(--stone-blue);
+  --secondary-text: var(--light-gray);
   --accent-text: var(--dark-gray);
   --action-text: var(--primary-blue);
+  --btn-text: var(--white);
+  --btn-active: var(--pale-blue);
+  --error-text: var(--red);
 }
 
 [data-theme='dark'] {
@@ -30,4 +32,17 @@
   --primary-text: var(--white);
   --secondary-text: var(--white);
   --accent-text: var(--white);
+  --attr-color: var(--pale-blue);
 }
+
+/* !Comment out until finished */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg: var(--off-black);
+    --container-bg: var(--navy-blue);
+    --primary-text: var(--white);
+    --secondary-text: var(--white);
+    --accent-text: var(--white);
+    --attr-color: var(--pale-blue);
+  }
+} */
