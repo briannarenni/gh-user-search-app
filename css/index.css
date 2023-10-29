@@ -1,7 +1,18 @@
+/* Tag Selectors */
+/* Utility Classes */
+/* Containers */
+/* Scheme Toggle */
+/* Search Bar */
+/* Profile */
+/* Profile - User Info */
+/* Profile - User Data */
+/* Profile - User Details */
+/* Footer */
+
+/* Tag Selectors */
 html {
   font-size: 15px;
 }
-
 
 body {
   background-color: var(--main-bg);
@@ -32,7 +43,7 @@ h4 {
   line-height: 1.33rem;
 }
 
-/* Utility classes */
+/* Utility Classes */
 .flex-row {
   display: flex;
 }
@@ -67,6 +78,7 @@ h4 {
   padding: 2rem 0;
 }
 
+/* ? Change T-B padding */
 .container {
   align-items: center;
   width: clamp(90vw, 99%, 99vw);
@@ -176,8 +188,6 @@ h4 {
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
-
-
 .user-info-wrap {
   align-items: center;
   gap: 1em;
@@ -191,6 +201,7 @@ h4 {
   width: clamp(120px, 0.5vw, 130px);
 }
 
+/* Profile - User Info */
 .user-info {
   width: 100%;
   gap: 5px;
@@ -210,6 +221,7 @@ h4 {
   min-height: 10vh;
 }
 
+/* Profile - User Data */
 .user-data {
   background-color: var(--main-bg);
   justify-content: space-evenly;
@@ -231,6 +243,7 @@ h4 {
   font-size: clamp(16px, 16px + .2vw, 18px);
 }
 
+/* Profile - User Details */
 .user-details {
   max-height: fit-content;
   gap: 1rem;
