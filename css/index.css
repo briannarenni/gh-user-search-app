@@ -54,7 +54,7 @@ h4 {
 }
 
 .small-text {
-  font-size: clamp(13px, 13px + .1vw, 15px);
+  font-size: clamp(13px, 12px + .25vw, 15px);
 }
 
 .screen-reader {
@@ -67,6 +67,11 @@ h4 {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/*TODO: use in JS for .search-bar, .profile-card, and .desk-container */
+.no-box-shadow {
+  box-shadow: none;
 }
 
 /* Containers */
@@ -92,27 +97,35 @@ h4 {
 
 .header {
   justify-content: space-between;
-  align-items: center;
   margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-end: .5em;
 }
 
 /* Scheme Toggle */
-.color-toggle {
+.toggle-btn {
+  display: inline-flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+  background-color: transparent;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 
-.color-toggle figure {
-  align-items: center;
-  gap: .7rem;
-  margin: 0;
+.toggle-btn-icon {
+  fill: currentColor;
+  margin-inline-start: .5rem;
 }
 
-.color-toggle figcaption,
-.color-toggle img {
-  display: inline-block;
+.dark-btn:hover {
+  color: var(--accent-text);
+  cursor: pointer;
+}
+
+.light-btn:hover {
+  color: var(--btn-active);
+  cursor: pointer;
 }
 
 /* Search Bar */
@@ -181,7 +194,7 @@ h4 {
 .profile-card {
   background-color: var(--container-bg);
   gap: .5em;
-  padding: 2rem 2.5rem;
+  padding: 1rem;
   padding-block-end: 0;
   margin-block-start: 1rem;
   border-radius: 1rem;
@@ -189,16 +202,15 @@ h4 {
 }
 
 .user-info-wrap {
-  align-items: center;
   gap: 1em;
-}
-
-.profile-img-wrap-desktop {
-  display: none;
 }
 
 .profile-img {
   width: clamp(120px, 0.5vw, 130px);
+}
+
+.profile-img-wrap-desktop {
+  display: none;
 }
 
 /* Profile - User Info */
@@ -282,12 +294,3 @@ h4 {
   color: var(--action-text);
   font-weight: bold;
 }
-
-/* @media (prefers-color-scheme: dark) {
-
-  .search-bar,
-  .profile-card,
-  .desk-container {
-    box-shadow: none;
-  }
-} */
