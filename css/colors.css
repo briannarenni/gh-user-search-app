@@ -6,7 +6,6 @@
   --stone-blue: #4B6A9B;
   --dark-gray: #2B3442;
   --primary-blue: #0079FF;
-
   --off-white: #FEFEFE;
   --white: #FFFFFF;
   --off-black: #141D2F;
@@ -34,15 +33,3 @@
   --accent-text: var(--white);
   --attr-color: var(--pale-blue);
 }
-
-/* !Comment out until finished */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --main-bg: var(--off-black);
-    --container-bg: var(--navy-blue);
-    --primary-text: var(--white);
-    --secondary-text: var(--white);
-    --accent-text: var(--white);
-    --attr-color: var(--pale-blue);
-  }
-} */

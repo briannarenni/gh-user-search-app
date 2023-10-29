@@ -8,7 +8,8 @@
   }
 
   .profile-card {
-    padding: 2rem;
+    padding: 2.5rem;
+    padding-block-end: 0;
   }
 
   .user-info__username {
@@ -45,20 +46,22 @@
   .desk-container {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    padding: 1rem;
     background-color: var(--container-bg);
     border-radius: 1rem;
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   }
 
   .profile-card {
-    box-shadow: none;
-    padding: 1rem;
-    padding-inline-end: 2.5rem;
+    margin: 0;
+    padding-block-start: 1.5rem;
+    padding-block-end: 0;
+    padding-inline-start: 1rem;
+
   }
 
   .profile-img-wrap-desktop {
     display: block;
-    padding-inline-start: 1.3rem;
+    margin: 0 auto;
     padding-block-start: 1rem;
   }
 
@@ -94,6 +97,6 @@
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: clamp(730px, 750px, 950px);
+    width: calc(750px + 1vw);
   }
 }
