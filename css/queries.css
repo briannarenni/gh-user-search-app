@@ -1,10 +1,14 @@
 @media screen and (min-width: 768px) {
   .container {
-    width: clamp(650px, 85%, 700px);
+    width: clamp(615px, 80%, 675px);
   }
 
   .search-bar {
     font-size: 16px;
+  }
+
+  .profile-card {
+    padding: 2rem;
   }
 
   .user-info__username {
@@ -39,26 +43,31 @@
 
 @media screen and (min-width: 1024px) {
   .desk-container {
-    /* TODO: Check colors, fix layouts */
     display: grid;
     grid-template-columns: 1fr 4fr;
+    background-color: var(--container-bg);
+    border-radius: 1rem;
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   }
 
-  .search {
-    width: 100%;
+  .profile-card {
+    box-shadow: none;
+    padding: 1rem;
+    padding-inline-end: 2.5rem;
   }
 
   .profile-img-wrap-desktop {
     display: block;
-  }
-
-  .profile-card {
-    margin-inline-start: 1em;
+    padding-inline-start: 1.3rem;
+    padding-block-start: 1rem;
   }
 
   .profile-img-wrap {
     display: none;
+  }
+
+  .search {
+    width: 100%;
   }
 
   .user-info {
