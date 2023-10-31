@@ -42,52 +42,54 @@
       </header>
 
       <main class="main">
-        <form action="#" class="search flex-row" novalidate>
+        <form action="#" id="search-form" class="search flex-row" novalidate>
           <div class="search-wrapper">
             <span class="search-icon">
               <img src="assets/icon-search.svg" alt="Magnifying glass search icon">
             </span>
-            <input type="search" id="search-bar" class="search-bar" placeholder="Search GitHub username" aria-label="Search Github username">
-            <button class="search-btn">Search</button>
+            <input type="search" id="search-input" class="search-bar" placeholder="Search GitHub username" aria-label="Search Github username">
+            <button type="submit" class="search-btn">Search</button>
           </div>
         </form>
+
+        <p id="error-text" class="error-text"></p>
 
         <div class="desk-container">
           <!-- Hidden on small screens -->
           <div class="profile-img-wrap-desktop">
-            <img src="assets/standin-pic.svg" class="profile-img" alt="User profile picture">
+            <img src="assets/standin-pic.svg" id="profile-img-desk" class="profile-img" alt="User profile picture">
           </div>
 
           <article class="profile-card flex-col">
             <section class="user-info-wrap flex-row">
               <!-- Hidden on large screens -->
               <div class="profile-img-wrap">
-                <img src="assets/standin-pic.svg" class="profile-img" alt="User profile picture">
+                <img src="assets/standin-pic.svg" id="profile-img-mobile" class="profile-img" alt="User profile picture">
               </div>
 
               <section class="user-info flex-col">
-                <h3 class="user-info__name">The Octocat</h3>
-                <h4 class="user-info__username ">@octocat</h4>
-                <h4 class="user-info__joined">Joined {25 January 2011}</h4>
+                <h3 id="user-name" class="user-info__name"></h3>
+                <h4 id="user-login" class="user-info__username "></h4>
+                <h4 id="user-joined" class="user-info__joined"></h4>
               </section>
             </section>
 
-            <section class="user-bio small-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore
-              magna aliqua.</section>
+            <section>
+              <p id="user-bio" class="user-bio small-text"></p>
+            </section>
 
             <section class="user-data flex-row">
               <div class="user-data__section repos">
                 <p class="user-data__title">Repos</p>
-                <h3 class="user-data__desc">8</h3>
+                <h3 id="user-repos" class="user-data__desc"></h3>
               </div>
               <div class="user-data__section followers">
                 <p class="user-data__title">Followers</p>
-                <h3 class="user-data__desc">10.9k</h3>
+                <h3 id="user-followers" class="user-data__desc"></h3>
               </div>
               <div class="user-data__section following">
                 <p class="user-data__title">Following</p>
-                <h3 class="user-data__desc">9</h3>
+                <h3 id="user-following" class="user-data__desc"></h3>
               </div>
             </section>
 
@@ -98,7 +100,7 @@
                     <span>
                       <img width="19px" src="assets/icon-location.svg" alt="Location pin icon">
                     </span>
-                    <figcaption>San Francisco</figcaption>
+                    <figcaption id="user-location"></figcaption>
                   </figure>
                 </li>
                 <li class="details">
@@ -106,15 +108,19 @@
                     <span>
                       <img src="assets/icon-website.svg" alt="Website icon">
                     </span>
-                    <figcaption>https://github.blog</figcaption>
+                    <figcaption>
+                      <a id="user-website" href="#"></a>
+                    </figcaption>
                   </figure>
                 </li>
-                <li class="details ">
+                <li class="details">
                   <figure class="user-details__twitter">
                     <span>
                       <img src="assets/icon-twitter.svg" alt="Twitter icon">
                     </span>
-                    <figcaption>{Not Available}</figcaption>
+                    <figcaption>
+                      <a id="user-twitter" href=""></a>
+                    </figcaption>
                   </figure>
                 </li>
                 <li class="details">
@@ -122,7 +128,9 @@
                     <span>
                       <img src="assets/icon-company.svg" alt="Company icon">
                     </span>
-                    <figcaption>@github</figcaption>
+                    <figcaption>
+                      <a id="user-company" href=""></a>
+                    </figcaption>
                   </figure>
                 </li>
               </ul>
@@ -138,6 +146,7 @@
     </div>
   </div>
   <script src="js/toggle.js"></script>
+  <script src="js/api.js" type="module"></script>
 </body>
 
 </html>

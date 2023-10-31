@@ -5,6 +5,7 @@
   --light-gray: #697C9A;
   --stone-blue: #4B6A9B;
   --dark-gray: #2B3442;
+  --dark-white: #9a9a9a;
   --primary-blue: #0079FF;
   --off-white: #FEFEFE;
   --white: #FFFFFF;
@@ -23,6 +24,7 @@
   --btn-text: var(--white);
   --btn-active: var(--pale-blue);
   --error-text: var(--red);
+  --na-text: var(--dark-white);
 }
 
 [data-theme='dark'] {
