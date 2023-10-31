@@ -41,6 +41,10 @@
   color: var(--action-text);
 }
 
+.user-info__joined {
+  font-size: clamp(12px, 12px + .25vw, 13px);
+}
+
 .user-bio {
   margin: 1rem 0;
   min-height: 5vh;

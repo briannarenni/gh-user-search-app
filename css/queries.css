@@ -75,9 +75,9 @@
 
   .user-info {
     display: grid;
-    grid-template: auto auto / .5fr 1fr;
+    grid-template: auto auto / 1fr 1fr;
     align-items: center;
-    column-gap: 5em;
+    column-gap: 1rem;
   }
 
   .user-info__name {
