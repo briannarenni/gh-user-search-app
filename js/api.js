@@ -1,11 +1,6 @@
 import ky from 'https://cdn.jsdelivr.net/npm/ky@1.1.2/+esm';
 import { format, parseISO } from 'https://cdn.skypack.dev/date-fns';
 
-// ! Remove before deployment
-const token =
-  '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';
-// ! Remove before deployment
-
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-input');
 const errorEl = document.querySelector('#error-text');
@@ -67,7 +62,7 @@ let profile = {
   company: ''
 };
 
-// TODO 6: Handle the error state
+// TODO: Check errors
 
 const checkForNull = (value) => (value ? value : 'N/A');
 
