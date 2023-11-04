@@ -124,11 +124,7 @@ const updateHTML = () => {
 const fetchUser = (username) => {
   const baseURL = 'https://api.github.com/';
 
-  ky.get(`${baseURL}users/${username}`, {
-    headers: {
-      Authorization: `token ${token}`
-    }
-  })
+  ky.get(`${baseURL}users/${username}`)
     .json()
     .then((data) => {
       const rawDate = data.created_at;
