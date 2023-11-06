@@ -38,6 +38,13 @@ const setDarkTheme = () => {
   removeShadow(deskContainer);
 };
 
+const setFavicon = () => {
+  const favicon = document.querySelector('link[rel="icon"]');
+  favicon.href = window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? '../assets/dark-favicon.ico'
+    : '../assets/light-favicon.ico';
+};
+
 const toggleTheme = () => {
   document.documentElement.getAttribute('data-theme') === 'dark' ? setLightTheme() : setDarkTheme();
 };
@@ -52,3 +59,4 @@ window.addEventListener('resize', () => {
 // Check user pref & update theme on page load
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 prefersDark ? setDarkTheme() : setLightTheme();
+setFavicon();
