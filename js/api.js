@@ -17,7 +17,9 @@ const locationEl = document.querySelector('#user-location');
 const websiteEl = document.querySelector('#user-website');
 const twitterEl = document.querySelector('#user-twitter');
 const companyEl = document.querySelector('#user-company');
-let usernameStr = '';
+
+const baseURL = 'https://api.github.com/';
+let usernameStr;
 
 const htmlElements = [
   nameEl,
@@ -62,45 +64,88 @@ let profile = {
   company: ''
 };
 
-// TODO: Check errors
-
-const checkForNull = (value) => (value ? value : 'N/A');
-
-const handleZeroValue = (value, element) => {
-  if (value === 0) {
-    element.textContent = 0;
-    element.classList.remove('na-text');
-  }
+const mapApiData = (data) => {
+  return {
+    avatar_url: data.avatar_url,
+    name: data.name,
+    username: `@${data.login}`,
+    join_date: `Joined ${format(parseISO(data.created_at), 'dd MMM yyyy')}`,
+    bio: data.bio,
+    repos: data.public_repos,
+    followers: data.followers,
+    following: data.following,
+    location: data.location,
+    website: data.blog,
+    twitter: data.twitter_username,
+    company: data.company
+  };
 };
 
 const handleNullValue = (value, element) => {
-  const textContent = checkForNull(value);
-  element.textContent = textContent;
-  textContent === 'N/A' ? element.classList.add('na-text') : element.classList.remove('na-text');
   if (value === 0) {
-    element.textContent = 0;
+    element.textContent = '0';
+    element.classList.remove('na-text');
+  } else {
+    const textContent = typeof value === 'string' ? value.trim() || 'N/A' : value || 'N/A';
+    element.textContent = textContent;
+    textContent === 'N/A' ? element.classList.add('na-text') : element.classList.remove('na-text');
   }
 };
 
+const validateUrl = (url) => {
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    return `https://${url}`;
+  }
+  return url;
+};
+
+const handleInvalidCompany = (element) => {
+  element.style.color = 'var(--primary-text)';
+  element.style.textDecoration = 'none';
+  element.style.pointerEvents = 'none';
+  element.setAttribute('aria-disabled', 'true');
+};
+
+const resetStyles = (element) => {
+  element.style.color = '';
+  element.style.textDecoration = '';
+  element.style.pointerEvents = '';
+  element.removeAttribute('aria-disabled');
+  element.classList.remove('na-text');
+};
+
 const handleLinkStyle = (value, element, linkType) => {
+  resetStyles(element);
   let href;
-  if (value) {
-    switch (linkType) {
-      case 'twitter':
-        href = `https://twitter.com/${value}`;
-        break;
-      case 'company':
-        href = `https://github.com/${value.startsWith('@') ? value.substring(1) : value}`;
-        break;
-      default:
-        href = value;
-    }
-    element.href = href;
-    element.classList.remove('na-text');
-  } else {
+
+  if (!value) {
     element.href = '#';
     element.classList.add('na-text');
+    element.setAttribute('aria-disabled', 'true');
+    return;
   }
+
+  switch (linkType) {
+    case 'twitter':
+      href = `https://twitter.com/${value}`;
+      break;
+    case 'company':
+      if (value.startsWith('@') && (value.match(/@/g) || []).length === 1) {
+        value.trim();
+        href = `https://github.com/${value.slice(1)}`;
+      } else {
+        href = '#';
+        handleInvalidCompany(element);
+        return;
+      }
+      break;
+    default:
+      href = validateUrl(value);
+  }
+
+  element.href = href;
+  element.classList.remove('na-text');
+  element.setAttribute('aria-disabled', 'false');
 };
 
 const updateHTML = () => {
@@ -112,41 +157,20 @@ const updateHTML = () => {
     handleNullValue(profile[key], htmlElements[index]);
   });
 
-  handleZeroValue(profile.repos, reposEl);
-  handleZeroValue(profile.followers, followersEl);
-  handleZeroValue(profile.following, followingEl);
-
   handleLinkStyle(profile.website, websiteEl);
   handleLinkStyle(profile.twitter, twitterEl, 'twitter');
   handleLinkStyle(profile.company, companyEl, 'company');
 };
 
 const fetchUser = (username) => {
-  const baseURL = 'https://api.github.com/';
-
   ky.get(`${baseURL}users/${username}`)
     .json()
     .then((data) => {
-      const rawDate = data.created_at;
-      const formattedDate = format(parseISO(rawDate), 'dd MMM yyyy');
-
-      profile.avatar_url = data.avatar_url;
-      profile.name = data.name;
-      profile.username = `@${data.login}`;
-      profile.join_date = `Joined ${formattedDate}`;
-      profile.bio = data.bio;
-      profile.repos = data.public_repos;
-      profile.followers = data.followers;
-      profile.following = data.following;
-      profile.location = data.location;
-      profile.website = data.blog;
-      profile.twitter = data.twitter_username;
-      profile.company = data.company;
-
+      profile = mapApiData(data);
       updateHTML();
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
       if (error.response && error.response.status === 404) {
         errorEl.textContent = 'No results';
       } else {
@@ -164,7 +188,6 @@ const submitSearch = (event) => {
   }
   errorEl.textContent = '';
   fetchUser(usernameStr);
-  updateHTML();
 };
 
 // On page load
