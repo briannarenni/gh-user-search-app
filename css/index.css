@@ -68,7 +68,6 @@ a:hover {
 
 .na-text {
   color: var(--na-text);
-  font-style: italic;
   text-decoration: none;
   pointer-events: none;
 }
