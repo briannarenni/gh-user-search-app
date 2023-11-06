@@ -67,10 +67,10 @@ let profile = {
 const mapApiData = (data) => {
   return {
     avatar_url: data.avatar_url,
-    name: data.name,
+    name: data.name ?? data.login,
     username: `@${data.login}`,
     join_date: `Joined ${format(parseISO(data.created_at), 'dd MMM yyyy')}`,
-    bio: data.bio,
+    bio: data.bio ?? 'This profile has no bio',
     repos: data.public_repos,
     followers: data.followers,
     following: data.following,
@@ -157,6 +157,10 @@ const updateHTML = () => {
     handleNullValue(profile[key], htmlElements[index]);
   });
 
+  if (profile.bio === 'This profile has no bio') {
+    bioEl.classList.add('na-text');
+  }
+
   handleLinkStyle(profile.website, websiteEl);
   handleLinkStyle(profile.twitter, twitterEl, 'twitter');
   handleLinkStyle(profile.company, companyEl, 'company');
@@ -166,6 +170,7 @@ const fetchUser = (username) => {
   ky.get(`${baseURL}users/${username}`)
     .json()
     .then((data) => {
+      console.log(data);
       profile = mapApiData(data);
       updateHTML();
     })
@@ -177,6 +182,7 @@ const fetchUser = (username) => {
         errorEl.textContent = 'An unexpected error occurred';
       }
     });
+  searchInput.value = '';
 };
 
 const submitSearch = (event) => {
